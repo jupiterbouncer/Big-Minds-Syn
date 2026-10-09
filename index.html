@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Minds — Pathway Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand">
+                💡 Big Minds <span class="brand-badge">Synthesis</span>
+            </a>
+            <div class="nav-links">
+                <a href="quiz.html" class="btn btn-warning">❓ Curiosity Quiz</a>
+                <button id="btn-next-student" class="btn btn-danger">🔄 Next Student</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Welcome Section & Progress Tracker -->
+        <header class="welcome-card">
+            <div class="welcome-text">
+                <h1>Discover What You Can Do With Your Curiosity! 🌟</h1>
+                <p>Welcome! Explore different pathway cards below, try hands-on practical activities, and find out what sparks your interest today.</p>
+            </div>
+            <div class="progress-box">
+                <div class="progress-title">Exploration Progress</div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <div id="progress-status-text" class="progress-status">0 of 5 Pathways Explored (0%)</div>
+            </div>
+        </header>
+
+        <!-- Step 1: Interest Selection -->
+        <section class="section-header">
+            <h2 class="section-title"><span>Step 1:</span> What are you curious about today?</h2>
+            <p class="section-subtitle">Select up to 3 interest areas to highlight corresponding pathways. (You can still explore all pathways below!)</p>
+            <div id="selection-alert" class="alert-box">⚠️ You can select a maximum of 3 interests. Deselect one if you want to pick a different area!</div>
+        </section>
+
+        <div id="interests-container" class="interests-grid">
+            <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- Step 2: Pathway Cards Grid -->
+        <section class="section-header">
+            <h2 class="section-title"><span>Step 2:</span> Interactive Pathway Explorer</h2>
+            <p class="section-subtitle">Click on any card below to open its details and try its mentorship activity.</p>
+        </section>
+
+        <div id="pathways-container" class="pathways-grid">
+            <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- Detailed Pathway & Activity Panel -->
+        <section id="detail-panel" class="detail-panel">
+            <!-- Rendered dynamically by app.js -->
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/pathwaysData.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

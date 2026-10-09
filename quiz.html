@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Minds — Curiosity Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand">
+                💡 Big Minds <span class="brand-badge">Synthesis</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="btn btn-primary">🏠 Back to Explorer</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="welcome-card">
+            <div>
+                <h1>Curiosity Quiz ❓</h1>
+                <p>Answer these 5 quick questions to discover which mentorship pathways match your natural interests!</p>
+            </div>
+        </header>
+
+        <form id="quiz-form">
+            <div id="quiz-questions-container"></div>
+            <button type="submit" class="btn btn-warning" style="font-size: 1.1rem; width: 100%; justify-content: center; margin-top: 10px;">
+                ✨ Discover My Recommendations
+            </button>
+        </form>
+
+        <section id="quiz-results" class="detail-panel" style="display: none; margin-top: 30px;">
+            <h2>🎉 Your Personalized Pathway Recommendations</h2>
+            <div id="recommendations-container" style="margin-top: 16px;"></div>
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn btn-primary">🚀 Explore These Pathways Now</a>
+                <button onclick="window.location.reload()" class="btn">🔄 Retake Quiz</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/pathwaysData.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('quiz-questions-container');
+            
+            // Render Questions
+            quizQuestions.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = 'quiz-card';
+                card.innerHTML = `
+                    <h3>Question ${idx + 1}: ${q.question}</h3>
+                    <div>
+                        ${q.options.map((opt, oIdx) => `
+                            <label class="quiz-option">
+                                <input type="radio" name="q${q.id}" value="${opt.area}" ${oIdx === 0 ? 'required' : ''}>
+                                <span>${opt.text}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Form Submit Logic
+            document.getElementById('quiz-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Tallies
+                const scores = { programming: 0, design: 0, finance: 0, speaking: 0, entrepreneurship: 0 };
+                
+                quizQuestions.forEach(q => {
+                    const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+                    if (selected) {
+                        scores[selected.value] += 1;
+                    }
+                });
+
+                // Calculate Top 2
+                const sortedAreas = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+                const topTwo = sortedAreas.slice(0, 2);
+
+                // Render Results
+                const resultsBox = document.getElementById('quiz-results');
+                const recContainer = document.getElementById('recommendations-container');
+                
+                recContainer.innerHTML = '';
+                topTwo.forEach(areaId => {
+                    const pathway = pathwaysData.find(p => p.id === areaId);
+                    if (pathway) {
+                        const card = document.createElement('div');
+                        card.className = 'activity-box';
+                        card.innerHTML = `
+                            <h3>${pathway.icon} Top Match: ${pathway.name} (${scores[areaId]} / 5 Points)</h3>
+                            <p style="margin-top: 6px;">${pathway.shortDesc}</p>
+                            <p style="margin-top: 6px; font-size: 0.85rem; color: #4F46E5;"><strong>Key Skills:</strong> ${pathway.skills.join(', ')}</p>
+                        `;
+                        recContainer.appendChild(card);
+                    }
+                });
+
+                resultsBox.style.display = 'block';
+                resultsBox.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
