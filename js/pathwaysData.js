@@ -15,7 +15,7 @@ const pathwaysData = [
         activityTitle: 'Interactive Web Color & Text Changer',
         activityDesc: 'See how JavaScript changes a webpage live when you click buttons!',
         nextSteps: 'Experiment with HTML tags or try block-based coding tools like Scratch.',
-        teamLead: 'Team Lead — [Name]'
+        teamLead: 'Team Lead — Kekeli'
     },
     {
         id: 'design',
@@ -27,7 +27,7 @@ const pathwaysData = [
         activityTitle: 'Mentorship Poster Theme Studio',
         activityDesc: 'Customize the visual theme of a mentorship poster by picking color palettes.',
         nextSteps: 'Sketch a poster on paper or explore free digital design tools.',
-        teamLead: 'Team Lead — [Name]'
+        teamLead: 'Team Lead — Emmanuel'
     },
     {
         id: 'finance',
@@ -39,7 +39,7 @@ const pathwaysData = [
         activityTitle: 'GHS 100 Allowance Allocator',
         activityDesc: 'Divide a hypothetical GHS 100 allowance between savings and spending.',
         nextSteps: 'Set a real savings goal for a school book or item you want.',
-        teamLead: 'Team Lead — [Name]'
+        teamLead: 'Team Lead — Elea'
     },
     {
         id: 'speaking',
@@ -51,7 +51,7 @@ const pathwaysData = [
         activityTitle: '1-Minute Speech Outline Builder',
         activityDesc: 'Draft a short structured speech with an opener, main points, and a conclusion.',
         nextSteps: 'Practice delivering your short speech aloud to a classmate or family member.',
-        teamLead: 'Team Lead — [Name]'
+        teamLead: 'Team Lead — Ebow'
     },
     {
         id: 'entrepreneurship',
@@ -63,7 +63,7 @@ const pathwaysData = [
         activityTitle: 'Chop Bar Profit Estimator',
         activityDesc: 'Calculate production cost, selling price, and profit per item for a local snack stand.',
         nextSteps: 'Brainstorm a simple craft or food item you could sell at a school fair.',
-        teamLead: 'Team Lead — [Name]'
+        teamLead: 'Team Lead — Demilade'
     }
 ];
 

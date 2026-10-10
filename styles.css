@@ -474,30 +474,6 @@ body {
     background-color: #EEF2FF;
 }
 
-/* --- Facilitator Guide Styles --- */
-.info-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    background-color: #FFFFFF;
-    border: 2.5px solid #0F172A;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 3px 3px 0px #0F172A;
-}
-
-.info-table th, .info-table td {
-    padding: 12px 16px;
-    border: 1px solid #0F172A;
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-.info-table th {
-    background-color: #EEF2FF;
-    font-weight: 800;
-}
-
 /* --- Responsive Adjustments --- */
 @media (max-width: 640px) {
     .welcome-card {
