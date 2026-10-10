@@ -1,8 +1,6 @@
 # Big Minds — Web Technologies Synthesis Edition
 
 **Course:** CS341 Web Technologies | Ashesi University  
-**Target Group:** Grade 5–6 Students | Crown Prince Academy, Lapaz, Ghana  
-**Service Project:** Leadership Seminar IV Mentorship Initiative  
 
 ---
 

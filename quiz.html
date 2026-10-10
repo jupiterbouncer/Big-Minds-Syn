@@ -35,7 +35,7 @@
         </form>
 
         <section id="quiz-results" class="detail-panel" style="display: none; margin-top: 30px;">
-            <h2>🎉 Your Personalized Pathway Recommendations</h2>
+            <h2>🎉 Your Top Pathway Match</h2>
             <div id="recommendations-container" style="margin-top: 16px;"></div>
             <div style="margin-top: 20px;">
                 <a href="index.html" class="btn btn-primary">🚀 Explore These Pathways Now</a>
@@ -81,16 +81,16 @@
                     }
                 });
 
-                // Calculate Top 2
+                // Calculate Top 1
                 const sortedAreas = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
-                const topTwo = sortedAreas.slice(0, 2);
+                const topOne = sortedAreas.slice(0, 1);
 
                 // Render Results
                 const resultsBox = document.getElementById('quiz-results');
                 const recContainer = document.getElementById('recommendations-container');
                 
                 recContainer.innerHTML = '';
-                topTwo.forEach(areaId => {
+                topOne.forEach(areaId => {
                     const pathway = pathwaysData.find(p => p.id === areaId);
                     if (pathway) {
                         const card = document.createElement('div');

@@ -91,6 +91,7 @@ function renderPathwayCards() {
             <div>
                 ${pathway.skills.slice(0, 2).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
             </div>
+            <p style="font-size: 0.78rem; color: #4F46E5; font-weight: 700; margin-top: 8px;">⚡ ${pathway.activityTitle}</p>
         `;
 
         card.addEventListener('click', () => {
@@ -132,6 +133,7 @@ function renderDetailPanel(pathwayId) {
         <div class="activity-box">
             <h3>⚡ Mentorship Activity: ${pathway.activityTitle}</h3>
             <p style="font-size: 0.9rem; color: #475569; margin-bottom: 14px;">${pathway.activityDesc}</p>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 10px;"><strong>👤 Session Lead:</strong> ${pathway.teamLead}</p>
             <div id="activity-container"></div>
         </div>
 
